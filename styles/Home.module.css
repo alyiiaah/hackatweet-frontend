@@ -7,6 +7,7 @@
   padding: 4rem 0;
 }
 
+
 .title {
   line-height: 1.15;
   font-size: 4rem;
@@ -20,3 +21,102 @@
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
+
+.container {
+  display: flex;
+}
+
+.left {
+  width: 50%;
+  height: 100vh;
+}
+
+.right {
+  width: 50%;
+  padding: 10px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 50%;
+  padding: 20px;
+  padding-left: 10px;
+}
+
+.signUpButton {
+  border-radius: 20px;
+  background-color: #378FEE;
+  color: white;
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.signInButton {
+  border-radius: 20px;
+  border: 1px solid #378FEE;
+  background-color: black;
+  color: #378FEE;
+  width: 70%;
+  padding: 10px;
+}
+
+.text {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.titleh1{
+font-size: 70px;
+}
+
+.titleh2{
+
+font-size: 30px;
+}
+
+.twitterLogo{
+  width: 8%;
+  height: 8%;
+
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  padding: 20px;
+  padding-left: 10px;
+
+}
+
+.inputText {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.signInButton,
+.signUpButton {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+

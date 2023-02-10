@@ -1,30 +1,25 @@
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
-import { Button, Modal } from 'antd';
+import { Button, Modal } from "antd";
 
 const Home = () => {
-  const [signInPopupIsOpen, setSignInPopupIsOpen] = useState(false);
-  const [signUpPopupIsOpen, setSignUpPopupIsOpen] = useState(false);
-  console.log("signInPopupIsOpen = " + signInPopupIsOpen);
+  const [signInModalOpen, setSignInModalOpen] = useState(false);
+  const [signUpModalOpen, setSignUpModalOpen] = useState(false);
 
-  const openSignInPopup = () => {
-    setSignInPopupIsOpen(true);
+  const openSignInModal = () => {
+    setSignInModalOpen(true);
   };
 
-  const closeSignInPopup = () => {
-    if (signInPopupIsOpen) {
-      setSignInPopupIsOpen(false);
-    }
+  const closeSignInModal = () => {
+    setSignInModalOpen(false);
   };
 
-  const openSignUpPopup = () => {
-    setSignUpPopupIsOpen(true);
+  const openSignUpModal = () => {
+    setSignUpModalOpen(true);
   };
 
-  const closeSignUpPopup = () => {
-    if (signUpPopupIsOpen) {
-      setSignUpPopupIsOpen(false);
-    }
+  const closeSignUpModal = () => {
+    setSignUpModalOpen(false);
   };
 
   return (
@@ -46,22 +41,90 @@ const Home = () => {
         </h1>
         <h2 className={styles.titleh2}>Join hackatweet today.</h2>
         <form className={styles.formContainer}>
-          <button
-            type="submit"
-            className={styles.signUpButton}
-            onClick={openSignUpPopup}
-          >
+          <Button type="primary" onClick={openSignUpModal} className={styles.signUpButton}>
             Sign up
-          </button>
+          </Button>
+
           <p className={styles.text}>Already have an account?</p>
-          <button
-            type="submit"
-            className={styles.signInButton}
-            onClick={openSignInPopup}
-          >
+          <Button type="primary" onClick={openSignInModal} className={styles.signInButton}>
             Sign in
-          </button>
+          </Button>
         </form>
+        <Modal
+      
+          visible={signInModalOpen}
+          onOk={closeSignInModal}
+          onCancel={closeSignInModal}
+        >
+          <div className={styles.modalContainer}>
+            <img
+              className={styles.twitterLogo}
+              src="twitterLogo.png"
+              alt="Twitter Logo"
+            />
+            <h2 className={styles.modalTitle}>Connect to Hackatweet</h2>
+            <form className={styles.modalForm}>
+              <input
+                className={styles.modalInput}
+                type="text"
+                placeholder="Username"
+              />
+              <input
+                className={styles.modalInput}
+                type="password"
+                placeholder="Password"
+              />
+              <Button
+                className={styles.modalButton}
+                type="submit"
+              >
+                Sign In
+              </Button>
+            </form>
+          </div>
+        </Modal>
+        <Modal 
+          visible={signUpModalOpen}
+          onOk={closeSignUpModal}
+          onCancel={closeSignUpModal}>
+          <div className={styles.modalContainer}>
+            <img
+              className={styles.twitterLogo}
+              src="twitterLogo.png"
+              alt="Twitter Logo"
+            />
+            <h2 className={styles.modalTitle}>
+              Create your hackatweet account
+            </h2>
+            <form className={styles.modalForm}>
+              <input
+                className={styles.modalInput}
+                type="text"
+                placeholder="Firstname"
+              />
+              <input
+                className={styles.modalInput}
+                type="text"
+                placeholder="Username"
+              />
+              <input
+                className={styles.modalInput}
+                type="password"
+                placeholder="Password"
+              />
+              <Button
+                className={styles.modalButton}
+                type="submit"
+              >
+                Sign Up
+              </Button>
+            </form>
+          </div>
+        </Modal>
+      </div>
+    </div>
+  );
+};
 
         <Modal
           isOpen={signInPopupIsOpen}

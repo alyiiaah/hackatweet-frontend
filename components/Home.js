@@ -3,29 +3,7 @@ import styles from "../styles/Home.module.css";
 import { Button, Modal } from 'antd';
 
 const Home = () => {
-  const [signInPopupIsOpen, setSignInPopupIsOpen] = useState(false);
-  const [signUpPopupIsOpen, setSignUpPopupIsOpen] = useState(false);
-  console.log("signInPopupIsOpen = " + signInPopupIsOpen);
 
-  const openSignInPopup = () => {
-    setSignInPopupIsOpen(true);
-  };
-
-  const closeSignInPopup = () => {
-    if (signInPopupIsOpen) {
-      setSignInPopupIsOpen(false);
-    }
-  };
-
-  const openSignUpPopup = () => {
-    setSignUpPopupIsOpen(true);
-  };
-
-  const closeSignUpPopup = () => {
-    if (signUpPopupIsOpen) {
-      setSignUpPopupIsOpen(false);
-    }
-  };
 
   return (
     <div className={styles.container}>
@@ -63,36 +41,7 @@ const Home = () => {
           </button>
         </form>
 
-        <Modal
-          isOpen={signInPopupIsOpen}
-          onRequestClose={closeSignInPopup}
-          contentLabel="Sign In Popup"
-          className={styles.popup}
-        >
-          <form>
-            <div className={styles.formGroup}>
-              <input
-                className="inputText"
-                type="text"
-                id="username"
-                name="username"
-                placeholder="username"
-              />
-              <input
-                className="inputText"
-                type="text"
-                id="password"
-                name="password"
-                placeholder="password"
-              />
-              <button type="button" className={styles.signInButton}>
-                Sign in
-              </button>
-            </div>
-            <button type="button" onClick={closeSignInPopup}>
-              Close
-            </button>
-          </form>
+        
         </Modal>
 
     
